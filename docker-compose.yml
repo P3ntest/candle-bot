@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  candle-bot:
+    image: p3ntest/candle-bot
+    environment:
+      - TOKEN=${TOKEN}
