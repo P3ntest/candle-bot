@@ -28,7 +28,7 @@ resource = createAudioResource(
   }
 );
 
-resource.volume.setVolume(0.005);
+resource.volume.setVolume(0.01);
 
 player.play(resource);
 player.on(AudioPlayerStatus.Idle, () => {
@@ -41,7 +41,7 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   const channel = newState.channel ?? oldState.channel;
   const members = channel.members.filter((member) => !member.user.bot).size;
 
-  if (members == 3) {
+  if (members == 2) {
     const con = joinVoiceChannel({
       channelId: channel.id,
       guildId: channel.guild.id,
